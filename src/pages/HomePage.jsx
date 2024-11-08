@@ -1,4 +1,5 @@
 import Header from "../layouts/SharedLayout/Header";
+import NavBar from "../layouts/SharedLayout/NavBar";
 
 const HomePage = () => {
     return (
@@ -12,6 +13,7 @@ const HomePage = () => {
                             <p className="font-semibold text-[#403F3F] text-[15px]"><span>Match Highlights: Germany vs Spain — as it happened   !   Match Highlights: Germany vs Spain as...</span></p>
                         </div>
                     </div>
+                    <NavBar />
                 </div>
             </header>
         </>
