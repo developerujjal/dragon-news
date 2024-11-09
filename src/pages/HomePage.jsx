@@ -32,7 +32,7 @@ const HomePage = () => {
                             <div className="col-span-2 border">
                                 <h1>main Content is here</h1>
                             </div>
-                            <div className="border">
+                            <div className="">
                                 <RightSideNav />
                             </div>
                         </div>
