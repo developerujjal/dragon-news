@@ -1,3 +1,4 @@
+import BlogsCard from "../layouts/BlogsCard";
 import LeftSideNav from "../layouts/LeftSideNav";
 import Header from "../layouts/SharedLayout/Header";
 import NavBar from "../layouts/SharedLayout/NavBar";
@@ -30,7 +31,12 @@ const HomePage = () => {
                                 <LeftSideNav />
                             </div>
                             <div className="col-span-2 border ">
-                                <h1>main Content is here</h1>
+                                <div className="mb-5">
+                                    <h3 className="text-[21px] font-bold text-[#403F3F]">Dragon News Home</h3>
+                                </div>
+                                <div>
+                                    <BlogsCard />
+                                </div>
                             </div>
                             <div className="">
                                 <RightSideNav />
