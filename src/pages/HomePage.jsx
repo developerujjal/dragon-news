@@ -27,10 +27,10 @@ const HomePage = () => {
                 <section>
                     <div className="container px-3 mx-auto my-0">
                         <div className="grid col-span-1 md:grid-cols-4 gap-x-6">
-                            <div className="border">
+                            <div>
                                 <LeftSideNav />
                             </div>
-                            <div className="col-span-2 border ">
+                            <div className="col-span-2 ">
                                 <div className="mb-5">
                                     <h3 className="text-[21px] font-bold text-[#403F3F]">Dragon News Home</h3>
                                 </div>
@@ -38,7 +38,7 @@ const HomePage = () => {
                                     <BlogsCard />
                                 </div>
                             </div>
-                            <div className="">
+                            <div>
                                 <RightSideNav />
                             </div>
                         </div>
