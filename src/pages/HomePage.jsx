@@ -1,5 +1,7 @@
+import LeftSideNav from "../layouts/LeftSideNav";
 import Header from "../layouts/SharedLayout/Header";
 import NavBar from "../layouts/SharedLayout/NavBar";
+import RightSideNav from "../layouts/SharedLayout/RightSideNav";
 
 const HomePage = () => {
     return (
@@ -16,6 +18,23 @@ const HomePage = () => {
                     <NavBar />
                 </div>
             </header>
+            <main>
+                <section>
+                    <div className="container px-3 mx-auto my-0">
+                        <div className="grid col-span-1 md:grid-cols-4 gap-x-6">
+                            <div className="border">
+                                <LeftSideNav />
+                            </div>
+                            <div className="col-span-2 border">
+                                <h1>main Content is here</h1>
+                            </div>
+                            <div className="border">
+                                <RightSideNav />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
         </>
     );
 };

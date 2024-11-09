@@ -3,7 +3,7 @@ import UserImg from '../../assets/user.png'
 
 const NavBar = () => {
     return (
-        <nav className="relative flex items-center justify-between flex-col gap-y-6 sm:h-10 md:justify-center py-6 px-4 mt-4">
+        <nav className="relative flex items-center justify-between flex-col gap-y-6 sm:h-10 md:justify-center py-6 px-4 mt-4 mb-8 md:mb-14">
             <div className=" flex gap-6 md:gap-0 md:space-x-10 text-[#706F6F]">
                 <NavLink
                     className="font-medium hover:text-gray-900 transition duration-150 ease-in-out">Home</NavLink>
