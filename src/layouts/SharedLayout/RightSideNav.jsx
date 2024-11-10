@@ -6,15 +6,34 @@ import swimming from '../../assets/swimming.png'
 import classImg from '../../assets/class.png'
 import playGround from '../../assets/playground.png'
 import bgImg from '../../assets/bg.png'
+import { useContext } from "react";
+import { AuthContext } from "../../components/Providers/AuthProvider";
 
 const RightSideNav = () => {
+    const { userLoginWithGoogle } = useContext(AuthContext)
+
+    const handleGoogleLogIn = () => {
+        userLoginWithGoogle()
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
+
+
     return (
         <>
             <div className="mb-5">
                 <h3 className="text-[21px] font-bold text-[#403F3F]">Login With</h3>
             </div>
             <div className="mb-14">
-                <button type="button" className="w-full flex items-center justify-center gap-4 py-3 px-6 text-sm mb-2 tracking-wide text-gray-800 border-2 border-[#403F3F] rounded-md bg-gray-50 hover:bg-gray-100 font-medium hover:border-[#3F7DED] hover:text-[#3F7DED] focus:outline-none">
+                <button
+                    onClick={handleGoogleLogIn}
+                    type="button"
+                    className="w-full flex items-center justify-center gap-4 py-3 px-6 text-sm mb-2 tracking-wide text-gray-800 border-2 border-[#403F3F] rounded-md bg-gray-50 hover:bg-gray-100 font-medium hover:border-[#3F7DED] hover:text-[#3F7DED] focus:outline-none">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20px" className="inline" viewBox="0 0 512 512">
                         <path fill="#fbbd00"
                             d="M120 256c0-25.367 6.989-49.13 19.131-69.477v-86.308H52.823C18.568 144.703 0 198.922 0 256s18.568 111.297 52.823 155.785h86.308v-86.308C126.989 305.13 120 281.367 120 256z"

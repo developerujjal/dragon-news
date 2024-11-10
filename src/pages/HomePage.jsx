@@ -6,6 +6,7 @@ import NavBar from "../layouts/SharedLayout/NavBar";
 import RightSideNav from "../layouts/SharedLayout/RightSideNav";
 import Marquee from "react-fast-marquee";
 
+
 const HomePage = () => {
 
     const newsData = useLoaderData();
@@ -42,6 +43,7 @@ const HomePage = () => {
                                     {
                                         newsData.map((newsItem) => <BlogsCard newsItem={newsItem} key={newsItem._id} />)
                                     }
+
                                 </div>
                             </div>
                             <div>
