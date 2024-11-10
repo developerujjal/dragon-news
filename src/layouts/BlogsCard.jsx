@@ -18,11 +18,11 @@ const BlogsCard = () => {
                 </div>
             </div>
             <div className="p-4">
-                <h2 className="text-[#403F3F] font-bold text-2xl mb-5">Biden Pledges Nearly $3 Billion To Ukraine In Largest U.S. Military Aid Package Yet</h2>
+                <h2 className="text-[#403F3F] font-bold text-xl md:text-2xl mb-5">Biden Pledges Nearly $3 Billion To Ukraine In Largest U.S. Military Aid Package Yet</h2>
                 <img src="https://source.unsplash.com/301x301/?random" alt="" className="object-cover object-center w-full h-72 rounded-md mb-8 dark:bg-gray-500" />
                 <div className="border-b-2 pb-5">
-                    <p className="text-[#706F6F] text-[17px] leading-7">Wednesday, August 24, 2022 | Tag Cloud Tags: Biden, EU, Euro, Europe, Joe Biden, Military, News, Russia, Security, UK, Ukraine, United States, Worthy News (Worthy News) – U.S. President Joe Biden has announced nearly $3 billion in new U.S. military a...</p>
-                    <span className="bg-gradient-to-r from-[#FF8C47] to-[#F75B5F] bg-clip-text text-transparent font-semibold text-[17px] leading-7 cursor-pointer">Read More</span>
+                    <p className="text-[#706F6F] text-base md:text-[17px] leading-7">Wednesday, August 24, 2022 | Tag Cloud Tags: Biden, EU, Euro, Europe, Joe Biden, Military, News, Russia, Security, UK, Ukraine, United States, Worthy News (Worthy News) – U.S. President Joe Biden has announced nearly $3 billion in new U.S. military a...</p>
+                    <span className="bg-gradient-to-r from-[#FF8C47] to-[#F75B5F] bg-clip-text text-transparent font-semibold text-base md:text-[17px] leading-7 cursor-pointer">Read More</span>
                 </div>
                 <div className="flex justify-between items-center pt-5 pb-2">
                     <div className="flex items-center">

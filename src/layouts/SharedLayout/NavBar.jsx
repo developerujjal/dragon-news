@@ -1,11 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
 import UserImg from '../../assets/user.png'
+import PropTypes from 'prop-types';
 
-const NavBar = () => {
+const NavBar = ({ signUpMargin }) => {
     return (
-        <nav className="relative flex items-center justify-between flex-col gap-y-6 sm:h-10 md:justify-center py-6 px-4 mt-4 mb-8 md:mb-14">
+        <nav className={`relative flex items-center justify-between flex-col gap-y-6 sm:h-10 md:justify-center py-6 px-4 mt-4 mb-8 ${signUpMargin ? 'md:mb-8': 'mb-16'}`}>
             <div className=" flex gap-6 md:gap-0 md:space-x-10 text-[#706F6F]">
                 <NavLink
+                    to={'/'}
                     className="font-medium hover:text-gray-900 transition duration-150 ease-in-out">Home</NavLink>
                 <NavLink
                     className="font-medium hover:text-gray-900 transition duration-150 ease-in-out">About</NavLink>
@@ -19,7 +21,9 @@ const NavBar = () => {
                 </div>
 
                 <div className="rounded-md shadow">
-                    <Link className="inline-flex items-center px-7 py-1.5 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-[#403F3F] hover:bg-gray-900 focus:outline-none focus:border-blue-700 transition duration-150 ease-in-out">
+                    <Link
+                        to={'/login'}
+                        className="inline-flex items-center px-7 py-1.5 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-[#403F3F] hover:bg-gray-900 focus:outline-none focus:border-blue-700 transition duration-150 ease-in-out">
                         Login
                     </Link>
                 </div>
@@ -27,5 +31,9 @@ const NavBar = () => {
         </nav>
     );
 };
+NavBar.propTypes = {
+    signUpMargin: PropTypes.bool
+} 
+
 
 export default NavBar;
