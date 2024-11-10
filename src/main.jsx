@@ -9,7 +9,9 @@ import AuthProvider from './components/Providers/AuthProvider'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthProvider>
-      <RouterProvider router={routes} future={{
+      <RouterProvider 
+      router={routes}
+       future={{
         v7_startTransition: true,
       }} />
     </AuthProvider>

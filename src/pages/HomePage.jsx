@@ -9,7 +9,6 @@ import Marquee from "react-fast-marquee";
 const HomePage = () => {
 
     const newsData = useLoaderData();
-    console.log(newsData)
 
     return (
         <>
@@ -40,9 +39,9 @@ const HomePage = () => {
                                     <h3 className="text-[21px] font-bold text-[#403F3F]">Dragon News Home</h3>
                                 </div>
                                 <div>
-                                {
-                                    newsData.map((newsItem) => <BlogsCard newsItem={newsItem} key={newsItem._id}/>)
-                                }
+                                    {
+                                        newsData.map((newsItem) => <BlogsCard newsItem={newsItem} key={newsItem._id} />)
+                                    }
                                 </div>
                             </div>
                             <div>

@@ -14,7 +14,7 @@ const BlogsCard = ({ newsItem }) => {
 
 
     return (
-        <div className="rounded-md border w-full">
+        <div className="rounded-md border w-full mb-10">
             <div className="flex items-center justify-between p-3.5 bg-[#F3F3F3]">
                 <div className="flex items-center justify-center space-x-2">
                     <img src={author?.img} alt="" className="object-cover object-center w-9 h-9 rounded-full shadow-sm dark:bg-gray-500 dark:border-gray-300" />
