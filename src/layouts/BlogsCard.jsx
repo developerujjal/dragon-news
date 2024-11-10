@@ -1,13 +1,26 @@
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-const BlogsCard = () => {
+const BlogsCard = ({ newsItem }) => {
+    const {
+        author,
+        title,
+        image_url,
+        details,
+        _id,
+        rating,
+        total_view
+    } = newsItem;
+
+
     return (
         <div className="rounded-md border w-full">
             <div className="flex items-center justify-between p-3.5 bg-[#F3F3F3]">
                 <div className="flex items-center justify-center space-x-2">
-                    <img src="https://source.unsplash.com/50x50/?portrait" alt="" className="object-cover object-center w-9 h-9 rounded-full shadow-sm dark:bg-gray-500 dark:border-gray-300" />
+                    <img src={author?.img} alt="" className="object-cover object-center w-9 h-9 rounded-full shadow-sm dark:bg-gray-500 dark:border-gray-300" />
                     <div className="-space-y-1">
-                        <h2 className="text-sm font-semibold leading-none mb-1">Awlad Hossain</h2>
-                        <span className="inline-block text-sm leading-none text-[#706F6F]">2022-08-21</span>
+                        <h2 className="text-sm font-semibold leading-none mb-1">{author?.name ? author?.name : 'News Presenter'}</h2>
+                        <span className="inline-block text-sm leading-none text-[#706F6F]">{author?.published_date ? author?.published_date : '2024-10-10'}</span>
                     </div>
                 </div>
 
@@ -18,11 +31,22 @@ const BlogsCard = () => {
                 </div>
             </div>
             <div className="p-4">
-                <h2 className="text-[#403F3F] font-bold text-xl md:text-2xl mb-5">Biden Pledges Nearly $3 Billion To Ukraine In Largest U.S. Military Aid Package Yet</h2>
-                <img src="https://source.unsplash.com/301x301/?random" alt="" className="object-cover object-center w-full h-72 rounded-md mb-8 dark:bg-gray-500" />
+                <h2 className="text-[#403F3F] font-bold text-xl md:text-2xl mb-5">{title}</h2>
+                <img src={image_url} alt="" className="object-cover object-center w-full h-72 rounded-md mb-8 dark:bg-gray-500" />
                 <div className="border-b-2 pb-5">
-                    <p className="text-[#706F6F] text-base md:text-[17px] leading-7">Wednesday, August 24, 2022 | Tag Cloud Tags: Biden, EU, Euro, Europe, Joe Biden, Military, News, Russia, Security, UK, Ukraine, United States, Worthy News (Worthy News) – U.S. President Joe Biden has announced nearly $3 billion in new U.S. military a...</p>
-                    <span className="bg-gradient-to-r from-[#FF8C47] to-[#F75B5F] bg-clip-text text-transparent font-semibold text-base md:text-[17px] leading-7 cursor-pointer">Read More</span>
+
+                    {
+                        details.length > 250 ?
+                            <p className="text-[#706F6F] text-base md:text-[17px] leading-7">{details.slice(0, 250)}....</p> :
+
+                            <p className="text-[#706F6F] text-base md:text-[17px] leading-7">{details}....</p>
+                    }
+
+                    {/*                     <p className="text-[#706F6F] text-base md:text-[17px] leading-7">Wednesday, August 24, 2022 | Tag Cloud Tags: Biden, EU, Euro, Europe, Joe Biden, Military, News, Russia, Security, UK, Ukraine, United States, Worthy News (Worthy News) – U.S. President Joe Biden has announced nearly $3 billion in new U.S. military a...</p> */}
+
+                    <Link
+                        to={`news/${_id}`}
+                        className="bg-gradient-to-r from-[#FF8C47] to-[#F75B5F] bg-clip-text text-transparent font-semibold text-base md:text-[17px] leading-7 cursor-pointer">Read More</Link>
                 </div>
                 <div className="flex justify-between items-center pt-5 pb-2">
                     <div className="flex items-center">
@@ -54,17 +78,21 @@ const BlogsCard = () => {
                             </svg>
 
                         </div>
-                        <span className="text-[#706F6F] font-semibold">4.5</span>
+                        <span className="text-[#706F6F] font-semibold">{rating?.number}</span>
                     </div>
 
                     <div className="flex">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#706F6F"><path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z" /></svg>
-                        <span className="ml-3 text-[#706F6F] font-semibold">499</span>
+                        <span className="ml-3 text-[#706F6F] font-semibold">{total_view ? total_view : '101'}</span>
                     </div>
                 </div>
             </div>
         </div>
     );
 };
+
+BlogsCard.propTypes = {
+    newsItem: PropTypes.object
+}
 
 export default BlogsCard;

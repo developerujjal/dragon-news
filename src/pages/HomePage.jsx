@@ -1,3 +1,4 @@
+import { useLoaderData } from "react-router-dom";
 import BlogsCard from "../layouts/BlogsCard";
 import LeftSideNav from "../layouts/LeftSideNav";
 import Header from "../layouts/SharedLayout/Header";
@@ -6,6 +7,10 @@ import RightSideNav from "../layouts/SharedLayout/RightSideNav";
 import Marquee from "react-fast-marquee";
 
 const HomePage = () => {
+
+    const newsData = useLoaderData();
+    console.log(newsData)
+
     return (
         <>
             <header>
@@ -35,7 +40,9 @@ const HomePage = () => {
                                     <h3 className="text-[21px] font-bold text-[#403F3F]">Dragon News Home</h3>
                                 </div>
                                 <div>
-                                    <BlogsCard />
+                                {
+                                    newsData.map((newsItem) => <BlogsCard newsItem={newsItem} key={newsItem._id}/>)
+                                }
                                 </div>
                             </div>
                             <div>
