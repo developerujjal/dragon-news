@@ -1,7 +1,6 @@
 import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import Header from "../layouts/SharedLayout/Header";
 import RightSideNav from "../layouts/SharedLayout/RightSideNav";
-import postImg from "../assets/blogimg.png"
 import NavBar from "../layouts/SharedLayout/NavBar";
 
 
